@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.idea/
+build/_work/
+dist/
+*.spec.bak
+config.json
+exports/
+*.log
+# --- Intent Notes ---

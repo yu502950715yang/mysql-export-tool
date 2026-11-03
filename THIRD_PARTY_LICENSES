@@ -1,0 +1,131 @@
+MySQL 数据导出工具（MysqlExportTool）
+第三方组件与许可声明
+================================================================================
+
+本程序（MysqlExportTool v0.1.0）以 PyInstaller 单文件 exe 形式分发，包含或
+使用下列第三方组件。各组件的著作权归其各自作者所有；本文件仅作归属与许可
+说明，不改变各组件的许可证条款。如本文件与组件官方许可证文本存在差异，以
+官方许可证文本为准。
+
+构建时使用的第三方组件版本：
+  PySide6 6.9.2 / shiboken6 6.9.2 / Qt 6.9.2
+  PyMySQL 1.1.2
+  Pillow 11.3.0（仅构建期）
+  Python 3.13.9
+  PyInstaller 6.19（仅引导程序随 exe 分发）
+
+--------------------------------------------------------------------------------
+一、PySide6（Qt for Python）与 Qt 6
+--------------------------------------------------------------------------------
+
+组件：PySide6 6.9.2（含 shiboken6 6.9.2）、Qt 6.9.2
+来源：https://pypi.org/project/PySide6/
+      https://code.qt.io/cgit/pyside/pyside-setup.git/
+      https://www.qt.io/
+版权：Copyright (C) The Qt Company Ltd. and contributors.
+许可：PySide6 提供 LGPL v3 / GPL v3 / Qt 商业许可三种授权方式；
+      本程序按 GNU Lesser General Public License v3.0（LGPL v3）使用。
+      LGPL v3 完整文本：https://www.gnu.org/licenses/lgpl-3.0.txt
+      Qt 开源许可说明：https://www.qt.io/licensing/open-source-lgpl-obligations
+
+动态链接与可替换性声明：
+1. 本程序以动态链接方式使用 PySide6 与 Qt，未修改 PySide6/Qt 源码，也未将
+   其静态链接进本程序。PyInstaller 打包的 exe 在运行时从解压目录加载
+   Qt6*.dll、PySide6 扩展模块（.pyd）等动态库。
+2. 依据 LGPL v3 第 4 条，用户有权使用修改后的 PySide6/Qt 库重新运行本程序。
+   具体方式：使用本项目的打包脚本 build/build.ps1 与 build/mysql-export-tool.spec，
+   将 PySide6/Qt 替换为自行编译或修改的版本后重新打包；本程序不对这些动态库
+   做签名或完整性校验。
+3. 本程序源码（含打包脚本）见项目仓库；如需对应源码或重新打包支持，请联系
+   项目维护者。
+4. 获取 PySide6 与 Qt 对应源码：
+   PySide6：https://code.qt.io/cgit/pyside/pyside-setup.git/
+            （发行包：https://pypi.org/project/PySide6/#files）
+   Qt：     https://download.qt.io/official_releases/qt/
+   本程序实际加载的 Qt 模块：QtCore、QtGui、QtWidgets。
+5. 按 LGPL v3 的要求，分发本程序时请随附本许可声明及 LGPL v3 许可证副本
+   （完整文本见上述链接，或 PySide6 源码包中的 LICENSES 目录）。
+6. 本程序未购买 Qt 商业许可，也未按 GPL v3 授权使用。
+
+--------------------------------------------------------------------------------
+二、PyMySQL
+--------------------------------------------------------------------------------
+
+组件：PyMySQL 1.1.2
+来源：https://github.com/PyMySQL/PyMySQL
+版权：Copyright (c) 2010, 2013 PyMySQL contributors
+许可：MIT License
+
+MIT 许可证全文：
+--------------------------------- 8< ---------------------------------
+Copyright (c) 2010, 2013 PyMySQL contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+--------------------------------- 8< ---------------------------------
+
+--------------------------------------------------------------------------------
+三、Pillow（仅构建期使用）
+--------------------------------------------------------------------------------
+
+组件：Pillow 11.3.0（构建时实际版本，要求 >= 10）
+来源：https://python-pillow.org/
+      https://github.com/python-pillow/Pillow
+许可：MIT-CMU License
+用途：仅在构建阶段由 build/make_icon.py 生成 exe 图标 build/app.ico；
+      不随 exe 分发，不参与程序运行时。
+许可证全文：https://github.com/python-pillow/Pillow/blob/main/LICENSE
+
+--------------------------------------------------------------------------------
+四、随 exe 分发的其他组件
+--------------------------------------------------------------------------------
+
+1. Python 运行时
+   组件：Python 3.13.9（打包时内嵌到 exe 中）
+   版权：Copyright (c) Python Software Foundation
+   许可：Python Software Foundation License Agreement
+   文本：https://docs.python.org/3/license.html
+
+2. PyInstaller 引导程序（bootloader）
+   组件：PyInstaller 6.19 的引导程序代码随 exe 嵌入
+   版权：Copyright (c) PyInstaller Development Team
+   许可：GNU General Public License v2.0 附特殊例外条款；该例外允许以任意
+         许可证分发由 PyInstaller 打包生成的程序。
+   文本：https://pyinstaller.org/en/stable/license.html
+
+--------------------------------------------------------------------------------
+五、PySide6-Fluent-Widgets（QFluentWidgets）
+--------------------------------------------------------------------------------
+
+组件：PySide6-Fluent-Widgets 1.11.3（模块名 qfluentwidgets）
+来源：https://github.com/zhiyiYo/PyQt-Fluent-Widgets
+      https://qfluentwidgets.com/
+版权：Copyright (c) 2021 zhiyiYo
+许可：双重许可 —— 非商业/开源使用为 GNU General Public License v3.0（GPLv3）；
+      商业闭源使用需购买商业授权。
+说明：本工具（MysqlExportTool）仅在公司GPLv3 使用，不对外分发/销售；
+      如未来需对外交付，应先取得该项目商业授权，或替换此 UI 组件库。
+GPLv3 全文：https://www.gnu.org/licenses/gpl-3.0.html
+项目许可说明：https://github.com/zhiyiYo/PyQt-Fluent-Widgets#license
+
+--------------------------------------------------------------------------------
+六、说明
+--------------------------------------------------------------------------------
+
+- README.md 的「许可」一节为本文件内容的摘要，如有冲突以本文件为准。
+- 本文件随程序分发，最后更新：2026-11-03（对应 MysqlExportTool v0.1.0）。
