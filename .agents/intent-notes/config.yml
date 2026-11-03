@@ -1,0 +1,8 @@
+project: "mysql-export-data"
+repos:
+  - path: "."
+    name: "mysql-export-data"
+sources:
+  - docs/superpowers/specs
+  - docs/superpowers/plans
+  - docs/superpowers/sdd
